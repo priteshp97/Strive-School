@@ -64,7 +64,7 @@ me.skills.pop();
 
 let dice = function () {
   let randomInt = Math.floor(Math.random() * 6) + 1;
-  console.log(randomInt);
+  return randomInt;
 };
 
 dice();
@@ -119,13 +119,48 @@ console.log(deleteOne("Hello", false));
    Ex.: onlyLetters("I have 4 dogs") => returns "I have  dogs"
 */
 
+let onlyLetters = function (str) {
+  let letters = str.replace(/[0-9]/g, "");
+  return letters;
+};
+
+console.log(onlyLetters("I am 24 years old"));
+
 /* EXERCISE 6
    Write a function called isThisAnEmail which receives a string as a parameter and returns true if the string is a valid email address.
 */
 
+let isThisAnEmail = function (str) {
+  if (/\S+@\S+\.\S+/.test(str)) {
+    return true;
+  } else {
+    return false;
+  }
+};
+
+console.log(isThisAnEmail("hello@gmail.com"));
+
 /* EXERCISE 7
    Write a function called whatDayIsIt that should return the current day of the week.
 */
+
+let whatDayIsIt = function () {
+  let date = new Date();
+  let day = date.getDay();
+  let dayList = [
+    "Sunday",
+    "Monday",
+    "Tuesday",
+    "Wednesday ",
+    "Thursday",
+    "Friday",
+    "Saturday",
+  ];
+
+  return dayList[day];
+};
+
+console.log(whatDayIsIt());
 
 /* EXERCISE 8
     Write a function called rollTheDices which receives a number as a parameter.
@@ -138,13 +173,58 @@ console.log(deleteOne("Hello", false));
     }
 */
 
+let rollTheDices = function (num) {
+  let array = [];
+  let sum = 0;
+
+  for (i = 0; i < num; i++) {
+    let random = dice();
+    array.push(random);
+    sum = sum + random;
+  }
+  let result = {
+    sum: sum,
+    values: array,
+  };
+  return result;
+};
+
+console.log(rollTheDices(3));
+
 /* EXERCISE 9
    Write a function called howManyDays which receives a date as a parameter and returns the number of days passed since that date.
 */
 
+let howManyDays = function (date) {
+  // format = year/month/date // Example: "2021/09/27"
+  let currentDate = new Date();
+  let suppliedDate = new Date(date);
+  let timeDiff = currentDate.getTime() - suppliedDate.getTime();
+  let dayDiff = timeDiff / (1000 * 3600 * 24);
+  return Math.floor(dayDiff);
+};
+
+console.log(howManyDays("2021/08/26")); // format = year/month/date // Example: "2021/09/27"
+
 /* EXERCISE 10
    Write a function called isTodayMyBirthday which should return true if today's your birthday, false otherwise.
 */
+
+let isTodayMyBirthday = function (date) {
+  let currentDate = new Date();
+  let suppliedDate = new Date(date);
+  let timeDiff = currentDate.getTime() - suppliedDate.getTime();
+  let dayDiff = timeDiff / (1000 * 3600 * 24);
+  let roundedDiff = Math.floor(dayDiff);
+
+  if (roundedDiff === 0) {
+    return true;
+  } else {
+    return false;
+  }
+};
+
+console.log(isTodayMyBirthday("2021/09/27"));
 
 // JS Arrays & Objects
 // NOTE: the movies array used in some exercises is defined at the end of this file
