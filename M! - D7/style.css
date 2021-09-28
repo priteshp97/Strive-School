@@ -1,0 +1,19 @@
+img {
+  width: 11rem;
+  height: 15rem;
+  display: block;
+  margin: 0 auto;
+}
+
+body {
+  text-align: center;
+  font-weight: bold;
+}
+
+.amazon {
+  cursor: zoom-in;
+}
+
+.imgs {
+  visibility: visible;
+}
