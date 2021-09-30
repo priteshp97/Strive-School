@@ -87,3 +87,16 @@ body {
 .selected {
   background-color: #e16162;
 }
+
+.list {
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(16, 1fr);
+  place-items: center;
+}
+
+.p {
+  margin-top: 4rem;
+  font-size: 1.5rem;
+  color: #fffffe;
+}

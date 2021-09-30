@@ -2,6 +2,8 @@ let bingoContainer = document.getElementById("bingo-container");
 let cells = document.querySelectorAll(".cells");
 let newCard = document.getElementById("new-card");
 let newNumber = document.getElementById("new-number");
+let list = document.getElementById("list");
+console.log(list);
 
 let uniqueRandomNumbers = [];
 
@@ -33,10 +35,16 @@ newNumber.addEventListener("click", function () {
   let randomNumber = Math.floor(Math.random() * uniqueRandomNumbers.length);
   let index = uniqueRandomNumbers[randomNumber];
   uniqueRandomNumbers.splice(randomNumber, 1);
+  let newP = document.createElement("p");
+  let text = (newP.innerText = `${index}`);
+  let css = newP.classList.add("p");
+  list.appendChild(newP);
   for (i = 0; i < cells.length; i++) {
     let text = cells[i].innerText;
     if (index == text) {
       cells[i].classList.add("selected");
+    } else if (uniqueRandomNumbers.length <= 0) {
+      newNumber.disabled = true;
     }
   }
   console.log(uniqueRandomNumbers);
