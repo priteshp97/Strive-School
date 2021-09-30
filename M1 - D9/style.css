@@ -86,6 +86,7 @@ body {
 
 .selected {
   background-color: #e16162;
+  color: white;
 }
 
 .list {
