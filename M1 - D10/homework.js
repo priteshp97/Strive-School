@@ -177,6 +177,8 @@ const sumTable = function () {
 
 // console.log(sumTable());
 
+// 45 - Delete the last letter from the heading each time the user clicks on it
+
 // ex 45
 
 const deleteLast = function () {
@@ -189,19 +191,3 @@ const deleteLast = function () {
 };
 
 // deleteLast();
-
-// 46 - Change the background color of a <td> if the user clicks on it
-
-// ex 46
-
-const td = document.querySelectorAll("td");
-
-const backgroundTd = function () {
-  for (let t of td) {
-    t.addEventListener("click", function () {
-      t.style.backgroundColor = "red";
-    });
-  }
-};
-
-// backgroundTd();
