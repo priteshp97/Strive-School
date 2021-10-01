@@ -163,8 +163,6 @@ const buttonTable = function () {
 
 buttonTable();
 
-// 44 - Write a function for calculating the sum of every number inside all the table cells (if their content is numeric -
-
 //ex 44
 
 const sumTable = function () {
@@ -178,3 +176,18 @@ const sumTable = function () {
 };
 
 // console.log(sumTable());
+
+// 45 - Delete the last letter from the heading each time the user clicks on it
+
+// ex 45
+
+const deleteLast = function () {
+  const h1 = document.querySelector("h1");
+  h1.addEventListener("click", function () {
+    const h1Text = h1.innerText;
+    let edit = h1Text.substring(0, h1Text.length - 1);
+    h1.innerText = edit;
+  });
+};
+
+// deleteLast();
