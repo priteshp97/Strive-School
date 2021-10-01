@@ -146,3 +146,19 @@ const buttonImages = function () {
 };
 
 buttonImages();
+
+// ex 43
+
+const buttonTable = function () {
+  const button = document.createElement("button");
+  const btnContent = (button.innerText = "Hide/Show Table");
+  const parentDiv = document.getElementById("buttons");
+  parentDiv.appendChild(button);
+
+  button.addEventListener("click", function () {
+    const table = document.querySelector("table");
+    table.classList.toggle("tableHide");
+  });
+};
+
+buttonTable();

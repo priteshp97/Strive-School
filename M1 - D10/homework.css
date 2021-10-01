@@ -82,3 +82,9 @@ table {
 tr {
   border: 2px dotted red;
 }
+
+/* ex 43 */
+
+.tableHide {
+  display: none;
+}
