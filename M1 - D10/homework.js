@@ -204,7 +204,6 @@ const backgroundTd = function () {
 
 // backgroundTd();
 
-// 48 - Add automatically a pink border to a cell when the mouse hovers it
 // 49 - Write a function to create a table with 4 rows and 3 columns programmatically and add it to the bottom of the page
 // 50 - Write a function to remove the last table from the page
 
@@ -237,3 +236,39 @@ const tds = function () {
 };
 
 // tds();
+
+// ex 49
+
+const tableCreate = function () {
+  const table = document.createElement("table");
+  const tableContent = (table.innerHTML = `
+    <tr>
+        <th>Column 1</th>
+        <th>Column 2</th>
+        <th>Column 3</th>
+      </tr>
+      <tr>
+        <td>Row 1</td>
+        <td>Row 1</td>
+        <td>Row 1</td>
+      </tr>
+      <tr>
+        <td>Row 2</td>
+        <td>Row 2</td>
+        <td>Row 2</td>
+      </tr>
+      <tr>
+        <td>Row 3</td>
+        <td>Row 3</td>
+        <td>Row 3</td>
+      </tr>
+      <tr>
+        <td>Row 4</td>
+        <td>Row 4</td>
+        <td>Row 4</td>
+      </tr>`);
+  const bottom = document.getElementById("table");
+  bottom.appendChild(table);
+};
+
+// tableCreate();
