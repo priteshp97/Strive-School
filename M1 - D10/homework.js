@@ -41,3 +41,49 @@ const tdLoop = function (text) {
 };
 
 // tdLoop("text");
+
+// ex 34
+
+const headingChange = function (heading) {
+  const h1 = document.querySelector("h1");
+  h1.innerText = `${heading}`;
+};
+
+// headingChange("changed heading");
+
+// ex 35
+
+const extraRow = function () {
+  const table = document.querySelector("table");
+  const newRow = document.createElement("tr");
+  const content = (newRow.innerHTML = `<td>New Row</td>
+  <td>New Row</td>
+  <td>New Row</td>
+  <td>New Row</td>
+  <td>New Row</td>`);
+  table.appendChild(newRow);
+};
+
+// extraRow();
+
+// ex 36
+
+const addClass = function () {
+  const getRows = document.querySelectorAll("td");
+  for (let css of getRows) {
+    css.classList.add("test");
+  }
+};
+
+// addClass();
+
+// ex 37
+
+const redBackground = function () {
+  const a = document.querySelectorAll("a");
+  for (let background of a) {
+    background.style.backgroundColor = "red";
+  }
+};
+
+// redBackground();
