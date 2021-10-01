@@ -87,3 +87,31 @@ const redBackground = function () {
 };
 
 // redBackground();
+
+// ex 38
+
+window.onload = function () {
+  console.log("Page loaded");
+};
+
+// ex 39
+
+const newLi = function () {
+  const ul = document.querySelector("ul");
+  const li = document.createElement("li");
+  const contentOfLi = (li.innerText = "New list");
+  ul.appendChild(li);
+};
+
+// newLi();
+
+// ex 40
+
+const empty = function () {
+  const liEmpty = document.querySelectorAll("ol li");
+  for (let empty of liEmpty) {
+    empty.innerText = "";
+  }
+};
+
+// empty();
