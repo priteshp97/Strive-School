@@ -10,3 +10,75 @@
         18 - Create a class to hide a piece of content
         19 - Add a green border to each <td>
         20 - Add a dotted red border to each <tr> (note: <tr> does not accept a border property - */
+
+/* ex 11 */
+
+body {
+  max-width: 992px;
+  margin: 0 auto;
+}
+
+/* ex 12 */
+
+h1 {
+  text-align: center;
+}
+
+/* ex 13 */
+
+a:link {
+  color: red;
+  background-color: blue;
+}
+
+/* ex 14 */
+
+.border {
+  border: 3px solid green;
+}
+
+/* ex 15 */
+
+table {
+  border-radius: 0.4rem;
+}
+
+/* ex 16 */
+
+p {
+  margin: 1rem 0;
+}
+
+/* ex 17 */
+
+.font {
+  font-size: 2rem;
+  font-weight: bold;
+}
+
+/* ex 18 */
+
+.hide {
+  display: none;
+
+  /* 
+    OR
+    visibility: hidden; 
+  */
+}
+
+/* ex 19 */
+
+td {
+  border: 2px solid green;
+}
+
+/* ex 20 */
+
+table {
+  border-collapse: collapse;
+}
+
+tr {
+  border: 2px dotted red;
+}
