@@ -128,4 +128,21 @@ const aHover = function () {
   }
 };
 
-aHover();
+// aHover();
+
+// ex 42
+const buttonImages = function () {
+  const button = document.createElement("button");
+  const btnContent = (button.innerText = "Hide Images");
+  const parentDiv = document.getElementById("buttons");
+  parentDiv.appendChild(button);
+
+  button.addEventListener("click", function () {
+    const imgs = document.querySelectorAll("img");
+    for (let img of imgs) {
+      img.style.display = "none";
+    }
+  });
+};
+
+buttonImages();
