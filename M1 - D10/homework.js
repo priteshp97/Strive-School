@@ -23,3 +23,21 @@
 // 48 - Add automatically a pink border to a cell when the mouse hovers it
 // 49 - Write a function to create a table with 4 rows and 3 columns programmatically and add it to the bottom of the page
 // 50 - Write a function to remove the last table from the page
+
+// ex 31
+
+const container = document.getElementById("container");
+
+// ex 32
+
+const tdAll = document.querySelectorAll("td");
+
+// ex 33
+
+const tdLoop = function (text) {
+  for (let td of tdAll) {
+    td.innerText = `${text}`;
+  }
+};
+
+// tdLoop("text");
