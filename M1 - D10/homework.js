@@ -204,9 +204,6 @@ const backgroundTd = function () {
 
 // backgroundTd();
 
-// 49 - Write a function to create a table with 4 rows and 3 columns programmatically and add it to the bottom of the page
-// 50 - Write a function to remove the last table from the page
-
 // ex 47
 
 const buttonDeleteTd = function () {
@@ -271,4 +268,14 @@ const tableCreate = function () {
   bottom.appendChild(table);
 };
 
-// tableCreate();
+tableCreate();
+
+// ex 50
+
+const lastTableDelete = function () {
+  const table = document.querySelectorAll("table");
+  let last = table.length;
+  table[last - 1].remove();
+};
+
+lastTableDelete();
