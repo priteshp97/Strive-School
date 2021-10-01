@@ -203,3 +203,25 @@ const backgroundTd = function () {
 };
 
 // backgroundTd();
+
+// 47 - Add a delete button at the bottom of the table, when clicked it should delete a random <td>
+// 48 - Add automatically a pink border to a cell when the mouse hovers it
+// 49 - Write a function to create a table with 4 rows and 3 columns programmatically and add it to the bottom of the page
+// 50 - Write a function to remove the last table from the page
+
+// ex 47
+
+const buttonDeleteTd = function () {
+  const button = document.createElement("button");
+  const btnContent = (button.innerText = "Delete random TD");
+  const table = document.querySelector("table");
+  table.appendChild(button);
+
+  button.addEventListener("click", function () {
+    const tds = document.querySelectorAll("td");
+    let random = Math.floor(Math.random() * tds.length);
+    tds[random].remove();
+  });
+};
+
+buttonDeleteTd();
