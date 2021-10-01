@@ -162,3 +162,19 @@ const buttonTable = function () {
 };
 
 buttonTable();
+
+// 44 - Write a function for calculating the sum of every number inside all the table cells (if their content is numeric -
+
+//ex 44
+
+const sumTable = function () {
+  let table = document.querySelector("table");
+  let items = table.getElementsByTagName("td");
+  let sum = 0;
+  for (let i = 0; i < items.length; i++) {
+    sum += parseInt(items[i].innerText);
+  }
+  return sum;
+};
+
+// console.log(sumTable());
