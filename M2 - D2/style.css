@@ -1,0 +1,90 @@
+body {
+  background-color: hsl(0, 0%, 7%);
+  color: hsl(0, 0%, 100%);
+}
+
+img {
+  display: block;
+  width: 100%;
+}
+
+.navbar {
+  background-color: hsl(0, 0%, 0%);
+}
+
+.navbar a {
+  color: hsl(0, 0%, 100%);
+}
+
+.card {
+  background-color: hsl(0, 0%, 10%);
+  padding: 1rem;
+  border-radius: 0.5rem;
+  max-width: 14rem;
+}
+
+.card-img-top {
+  border-radius: 0.5rem;
+}
+
+.card-text {
+  color: hsl(0, 4%, 52%);
+}
+
+.img {
+  border: 2px solid black;
+}
+
+.album {
+  font-size: 1rem;
+}
+
+.title {
+  font-size: 3rem;
+}
+
+.detail {
+  font-size: 1rem;
+}
+
+.detail-span {
+  color: hsl(0, 4%, 52%);
+}
+
+.song {
+  width: 100%;
+  display: grid;
+  grid-template-columns: 10% 25% 65%;
+  align-items: center;
+}
+
+.column {
+  color: hsl(0, 0%, 65%);
+  font-weight: 400;
+}
+
+.right-time {
+  justify-self: end;
+  padding-right: 5rem;
+  color: hsl(0, 0%, 65%);
+  font-weight: 500;
+}
+
+.left-number {
+  padding-left: 5rem;
+}
+
+.left-title {
+  padding-left: 2rem;
+  font-weight: 500;
+}
+
+.title-span {
+  color: hsl(0, 0%, 65%);
+  font-size: 0.85rem;
+}
+
+hr {
+  background-color: white;
+  margin-top: 2rem;
+}
