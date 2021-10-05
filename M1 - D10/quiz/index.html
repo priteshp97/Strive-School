@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Javascript Quiz Game</title>
+    <link rel="stylesheet" href="style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <header>
+      <!-- start quiz -->
+      <div class="start-btn">
+        <button id="start-btn">Start Quiz</button>
+      </div>
+    </header>
+
+    <!-- Quiz Box -->
+    <main class="quiz-container">
+      <div class="quiz-box">
+        <section class="top-container">
+          <div class="title">Prit's Quiz Game</div>
+          <div class="timer">
+            <div class="time-left-txt">Time Left</div>
+            <div class="timer-sec">15</div>
+          </div>
+        </section>
+        <div class="line1"></div>
+        <section>
+          <div class="que-text">
+            <!-- Here I've inserted question from JavaScript -->
+            <h2 class="q-title">Which is true?</h2>
+          </div>
+          <div class="option-list">
+            <!-- Here I've inserted options from JavaScript -->
+            <div class="answers">Lorem ipsum dolor sit amet consectetur.</div>
+            <div class="answers">Lorem ipsum dolor sit amet consectetur.</div>
+            <div class="answers">Lorem ipsum dolor sit amet consectetur.</div>
+            <div class="answers">Lorem ipsum dolor sit amet consectetur.</div>
+            <div class="line2"></div>
+          </div>
+        </section>
+
+        <!-- footer of Quiz Box -->
+        <footer class="footer-container">
+          <div class="total-que">
+            <span>1 of 5 Questions</span>
+            <!-- Here I've inserted Question Count Number from JavaScript -->
+          </div>
+          <button class="next-btn">Next Question</button>
+        </footer>
+      </div>
+    </main>
+    <section class="results-container">
+      <!-- Result Box -->
+      <div class="result-box">
+        <div class="icon">
+          <i class="far fa-check-circle"></i>
+        </div>
+        <div class="complete-text">You've completed the Quiz!</div>
+        <div class="score-text">
+          <!-- Here I've inserted Score Result from JavaScript -->
+        </div>
+        <div class="buttons">
+          <button class="restart">Replay Quiz</button>
+          <button class="quit">Quit Quiz</button>
+        </div>
+      </div>
+    </section>
+
+    <script src="app.js"></script>
+  </body>
+</html>
