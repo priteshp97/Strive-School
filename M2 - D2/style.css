@@ -54,8 +54,16 @@ img {
 .song {
   width: 100%;
   display: grid;
-  grid-template-columns: 10% 25% 65%;
+  grid-template-columns: 20% 25% 45%;
   align-items: center;
+}
+
+.song:not(:first-child):hover {
+  background-color: hsla(0, 0%, 65%, 0.089);
+}
+
+.song:not(:first-child):hover .title-span {
+  color: hsl(0, 0%, 100%);
 }
 
 .column {
@@ -65,17 +73,15 @@ img {
 
 .right-time {
   justify-self: end;
-  padding-right: 5rem;
   color: hsl(0, 0%, 65%);
   font-weight: 500;
 }
 
 .left-number {
-  padding-left: 5rem;
+  padding-left: 6rem;
 }
 
 .left-title {
-  padding-left: 2rem;
   font-weight: 500;
 }
 
@@ -87,4 +93,8 @@ img {
 hr {
   background-color: white;
   margin-top: 2rem;
+}
+
+#album {
+  padding-left: 5rem;
 }
