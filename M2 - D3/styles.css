@@ -1,0 +1,17 @@
+#logo {
+  width: 30px;
+  height: 30px;
+}
+
+.feedback-img {
+  max-width: 40rem;
+  max-height: 40rem;
+  margin: 0 auto;
+  object-fit: cover;
+}
+
+.testimonial-p {
+  max-width: 35rem;
+  text-align: center;
+  margin: 2rem auto;
+}
