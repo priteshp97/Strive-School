@@ -39,6 +39,4 @@ assignBtn.addEventListener("click", function () {
   let random = Math.floor(Math.random() * array.length);
   array.splice(random, 1);
   amountOfNames[random].remove();
-  console.log(array);
-  console.log(random);
 });
