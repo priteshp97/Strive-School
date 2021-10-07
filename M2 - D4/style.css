@@ -1,0 +1,17 @@
+body {
+  background-color: #16161a;
+  color: #94a1b2;
+}
+
+.label {
+  color: #fffffe;
+  display: block;
+}
+
+.header--title {
+  color: #fffffe;
+}
+
+li {
+  list-style-type: none;
+}
