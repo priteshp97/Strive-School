@@ -26,7 +26,7 @@ btnTeam.addEventListener("click", function () {
     let list1 = document.createElement("div");
     let html = `
     <h2> Team ${i} </h2>
-    <ol> </ol>
+    <ol class"teams-ol}"> </ol>
     
     `;
     list1.innerHTML = html;
@@ -37,10 +37,8 @@ btnTeam.addEventListener("click", function () {
 assignBtn.addEventListener("click", function () {
   let amountOfNames = document.querySelectorAll(".list li");
   let random = Math.floor(Math.random() * array.length);
-
   array.splice(random, 1);
-  amountOfNames[0].innerText = "";
+  amountOfNames[random].remove();
   console.log(array);
   console.log(random);
-  console.log(amountOfNames[random]);
 });
