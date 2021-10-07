@@ -26,7 +26,7 @@ btnTeam.addEventListener("click", function () {
     let list1 = document.createElement("div");
     let html = `
     <h2> Team ${i} </h2>
-    <ol class"teams-ol}"> </ol>
+    <ol id="teams-ol-${i}"> </ol>
     
     `;
     list1.innerHTML = html;
