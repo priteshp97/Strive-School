@@ -19,12 +19,27 @@ hr {
   margin-top: 2rem;
 }
 
-.navbar {
-  background-color: hsl(0, 0%, 0%);
-}
-
 .navbar a {
   color: hsl(0, 0%, 100%);
+}
+
+.jumbotron {
+  background-color: hsl(0, 0%, 10%);
+  animation: fadein 3s;
+}
+
+@keyframes fadein {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+header h1 {
+  font-weight: bold !important;
+  letter-spacing: 0.05rem;
 }
 
 .card {
@@ -32,6 +47,12 @@ hr {
   padding: 1rem;
   border-radius: 0.5rem;
   max-width: 14rem;
+}
+
+.badge-primary {
+  background-color: hsl(0, 0%, 7%);
+  margin-bottom: 1rem;
+  padding: 0.5rem;
 }
 
 .card-img-top {
