@@ -19,6 +19,17 @@ hr {
   margin-top: 2rem;
 }
 
+.btn-primary {
+  background-color: hsl(0, 0%, 7%);
+  border-color: grey;
+  font-size: 0.75rem;
+}
+
+.btn-primary:hover {
+  background-color: hsl(0, 0%, 0%);
+  border-color: red;
+}
+
 .navbar a {
   color: hsl(0, 0%, 100%);
 }
@@ -86,7 +97,7 @@ header h1 {
 .song {
   width: 100%;
   display: grid;
-  grid-template-columns: 10% 35% 50%;
+  grid-template-columns: 10% 35% 47% 8%;
   align-items: center;
   padding: 0.75rem 2rem;
   transition: 0.3s ease-in-out;
@@ -114,6 +125,10 @@ header h1 {
   justify-self: end;
   color: hsl(0, 0%, 65%);
   font-weight: 500;
+}
+
+.remove {
+  padding-left: 2rem;
 }
 
 .left-number {
