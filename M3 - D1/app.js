@@ -47,7 +47,10 @@ large(9, 5, 6);
 let true1;
 
 const checkRange = function (int1, int2) {
-  return (int1 >= 40 && int1 <= 60) || (int1 >= 70 && int1 <= 100);
+  return (
+    ((int1 >= 40 && int1 <= 60) || (int1 >= 70 && int1 <= 100)) &&
+    ((int2 >= 40 && int2 <= 60) || (int2 >= 70 && int2 <= 100))
+  );
 
   if ((int1 >= 40 && int1 <= 60) || (int1 >= 70 && int1 <= 100)) {
     let true1 = true;
