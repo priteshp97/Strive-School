@@ -86,14 +86,53 @@ city("Nw York");
 /* 8. Create a function to calculate and return the sum of all elements from an array with 3 elements. 
     Pass the array as a parameter. */
 
+const array = function (arr) {
+  let sum = 0;
+  for (let i = 0; i < arr.length; i++) {
+    sum += arr[i];
+  }
+  console.log(sum);
+};
+
+array([4, 5, 6]);
+
 /* 9. Create a function to test if an array of lenght 2 contains 1 OR 3. 
     Return `true` is it does, `false` if it doesn't. */
+
+const arrayCheck = function (arr) {
+  if (arr[0] === 1 || arr[0] === 3 || arr[1] === 1 || arr[1] === 3) {
+    console.log("true");
+  } else {
+    console.log("false");
+  }
+};
+
+arrayCheck([1, 3]);
 
 /* 10. Create a function to test if an array of lenght 2 DOES NOT contain 1 or 3. 
     Return `true` if it doesn't, `false` if it does. */
 
+const arrayCheckNot = function (arr) {
+  if (arr[0] !== 1 || arr[0] !== 3 || arr[1] !== 1 || arr[1] !== 3) {
+    console.log("true");
+  } else {
+    console.log("false");
+  }
+};
+
+arrayCheckNot([1, 2]);
+
 /* 11. Create a function to find the longest string from a given array of strings. 
     Pass the array as parameter and return the longest string. */
+
+const ArrayLength = function (arr) {
+  let longest = arr.reduce(function (a, b) {
+    return a.length > b.length ? a : b;
+  });
+  console.log(longest);
+};
+
+ArrayLength(["hello", "longest"]);
 
 /* 12. Create a function to find the types of a given angle:
   1. Acute angle â‡’ between 0 and 90 degrees. Return `acute`.
