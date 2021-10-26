@@ -69,8 +69,17 @@ const url = "https://picsum.photos/200/300";
 //     console.log(err);
 //   });
 
+let albums = [];
+
 fetch("https://striveschool-api.herokuapp.com/api/deezer/search?q=eminem")
-  .then((response) => {
-    response.json;
-  })
-  .catch();
+  .then((response) => response.json())
+  .then((body) => {
+    console.log(body);
+    console.log(body.data);
+
+    for (i = 0; i < body.data.length; i++) {
+      albums.push(body.data[i].title);
+    }
+  });
+
+console.log(albums);
