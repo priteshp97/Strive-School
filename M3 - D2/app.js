@@ -9,25 +9,25 @@ const btn = document.querySelector(".btn");
 const img = document.querySelector(".img-container");
 const url = "https://picsum.photos/200/300";
 
-btn.addEventListener("click", () => {
-  addColor(1000, h1, "red")
-    .then(() => addColor(2000, h2, "blue"))
-    .then(() => addColor(3000, h3, "green"))
-    .catch((err) => console.log(err));
-});
+// btn.addEventListener("click", () => {
+//   addColor(1000, h1, "red")
+//     .then(() => addColor(2000, h2, "blue"))
+//     .then(() => addColor(3000, h3, "green"))
+//     .catch((err) => console.log(err));
+// });
 
-function addColor(time, element, color) {
-  return new Promise((resolve, reject) => {
-    if (element) {
-      setTimeout(() => {
-        element.style.color = color;
-        resolve();
-      }, time);
-    } else {
-      reject(new Error(`there is no such element ${element}`));
-    }
-  });
-}
+// function addColor(time, element, color) {
+//   return new Promise((resolve, reject) => {
+//     if (element) {
+//       setTimeout(() => {
+//         element.style.color = color;
+//         resolve();
+//       }, time);
+//     } else {
+//       reject(new Error(`there is no such element ${element}`));
+//     }
+//   });
+// }
 
 // btn.addEventListener("click", () => {
 //   loadImage(url)
@@ -68,3 +68,9 @@ function addColor(time, element, color) {
 //   .catch((err) => {
 //     console.log(err);
 //   });
+
+fetch("https://striveschool-api.herokuapp.com/api/deezer/search?q=eminem")
+  .then((response) => {
+    response.json;
+  })
+  .catch();
