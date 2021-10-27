@@ -2,6 +2,8 @@ const primary = document.querySelector(".primary");
 const secondary = document.querySelector(".secondary");
 const img = document.querySelectorAll(".img img");
 const p = document.querySelectorAll(".card-body p");
+const btn = document.querySelector(".hide");
+const card = document.querySelectorAll(".card");
 
 let url = "";
 
@@ -43,3 +45,9 @@ fetch("https://api.pexels.com/v1/search?query=city&per_page=10", obj)
 for (let i = 0; i < p.length; i++) {
   p[i].textContent = "Text has been replaced";
 }
+
+btn.addEventListener("click", () => {
+  for (let i = 0; i < card.length; i++) {
+    card[i].style.display = "none";
+  }
+});
