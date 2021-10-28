@@ -7,6 +7,7 @@ fetch("https://striveschool-api.herokuapp.com/books")
 
     for (let i = 0; i < books.length; i++) {
       const container = document.querySelector(".books");
+
       const div = document.createElement("div");
       let divContent = (div.innerHTML = `
       <div class="card">
@@ -22,9 +23,12 @@ fetch("https://striveschool-api.herokuapp.com/books")
             <p>${books[i].category}</p>
             <p>${books[i].price}</p>
           </div>
+          <div class="button">
+          <button class="btn">Add to Cart</button>
         </div>
       </div>
       `);
       container.appendChild(div);
+      var btn = document.querySelectorAll(".btn");
     }
   });
