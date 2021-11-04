@@ -1,88 +1,147 @@
-const bodyData = {
-  name: "Nokia 3550",
-  description: "some description",
-  brand: "nokia",
-  imageUrl:
-    "https://drop.ndtv.com/TECH/product_database/images/2152017124957PM_635_nokia_3310.jpeg?downsize=*:420&output-quality=80",
-  price: 500,
-};
+const name = document.getElementById("name");
+const description = document.getElementById("description");
+const brand = document.getElementById("brand");
+const imageUrl = document.getElementById("imageUrl");
+const price = document.getElementById("price");
+const form = document.getElementById("form");
+const submit = document.getElementById("submit");
 
-let json = JSON.stringify(bodyData);
+// populate page
 
-let array = ["6182a701aacaa2001552a59e", "6182a70faacaa2001552a59f"];
-
-const obj = {
-  method: "POST",
+const get = {
+  method: "GET",
   headers: {
     Authorization:
       "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MTgyOTRjYWFhY2FhMjAwMTU1MmExOWMiLCJpYXQiOjE2MzU5NDc3MjIsImV4cCI6MTYzNzE1NzMyMn0.iADXUoghFqm1Ar9In_6vTvfSvSVRBnJUL0Qr7XOFva8",
-    "Content-Type": "application/json",
   },
-  body: json,
 };
 
-// let api = async () => {
-//   try {
-//     let response = await fetch(
-//       "https://striveschool-api.herokuapp.com/api/product/",
-//       obj
-//     );
-//     if (response.ok) {
-//       let body = await response.json();
+let getObjects = async () => {
+  try {
+    let response = await fetch(
+      `https://striveschool-api.herokuapp.com/api/product`,
+      get
+    );
+    if (response.ok) {
+      let body = await response.json();
+      console.log(body);
+      body.forEach((products) => {
+        let container = document.querySelector(".container");
+        container.innerHTML += `
+        <article class="card">
+        <div class="img-container">
+          <img
+            src="${products.imageUrl}"
+            alt=""
+          />
+        </div>
+        <div class="body">
+        <p>${products.name}</p>
+        <p>${products.description}</p>
+          <p>${products.brand}</p>
+          <p>${"£" + products.price}</p>
+          <a href="details.html?id=${
+            products._id
+          }" target="_blank">View Details</a>
+        </div>
+      </article>`;
+      });
+      let container = document.querySelector(".container");
+    } else {
+      throw new Error("Some sort of error");
+    }
+  } catch (error) {
+    console.log(error);
+  }
+};
+
+// view details
+
+let viewDetails = async () => {
+  try {
+    let response = await fetch(
+      `https://striveschool-api.herokuapp.com/api/product`,
+      get
+    );
+
+    if (response.ok) {
+      let body = await response.json();
+      console.log(body);
+    } else {
+      throw Error("Fetch didn't work");
+    }
+  } catch (error) {
+    console.log(error);
+  }
+};
+
+getObjects();
+
+// POST
+
+function handleForm(event) {
+  event.preventDefault();
+}
+form.addEventListener("submit", handleForm);
+
+submit.addEventListener("click", () => {
+  const bodyData = {};
+  bodyData.name = name.value;
+  bodyData.description = description.value;
+  bodyData.brand = brand.value;
+  bodyData.imageUrl = imageUrl.value;
+  bodyData.price = price.value;
+  console.log(bodyData);
+  let json = JSON.stringify(bodyData);
+  let post = {
+    method: "POST",
+    headers: {
+      Authorization:
+        "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MTgyOTRjYWFhY2FhMjAwMTU1MmExOWMiLCJpYXQiOjE2MzU5NDc3MjIsImV4cCI6MTYzNzE1NzMyMn0.iADXUoghFqm1Ar9In_6vTvfSvSVRBnJUL0Qr7XOFva8",
+      "Content-Type": "application/json",
+    },
+    body: json,
+  };
+
+  let postObject = async () => {
+    try {
+      let response = await fetch(
+        "https://striveschool-api.herokuapp.com/api/product/",
+        post
+      );
+      if (response.ok) {
+        let body = await response.json();
+        console.log(body);
+      } else {
+        throw new Error("Something went wrong");
+      }
+    } catch (err) {
+      console.log(err);
+    }
+  };
+
+  postObject();
+});
+
+// fetch(`https://striveschool-api.herokuapp.com/api/product`, get)
+//   .then((response) => response.json())
+//   .then((products) => {
+//     products.forEach((product) => {
 //       let container = document.querySelector(".container");
 //       container.innerHTML += `
 //         <article class="card">
 //         <div class="img-container">
 //           <img
-//             src="${body.imageUrl}"
+//             src="${product.imageUrl}"
 //             alt=""
 //           />
 //         </div>
 //         <div class="body">
-//         <p>${body.name}</p>
-//         <p>${body.description}</p>
-//           <p>${body.brand}</p>
-//           <p>${"£" + body.price}</p>
+//         <p>${product.name}</p>
+//         <p>${product.description}</p>
+//           <p>${product.brand}</p>
+//           <p>${"£" + product.price}</p>
 //         </div>
 //       </article>`;
-//     } else {
-//       throw new Error("Something went wrong");
-//     }
-//   } catch (err) {
-//     console.log(err);
-//   }
-// };
-
-// api();
-
-// populate page
-
-const get = {
-  headers: {
-    Authorization:
-      "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MTgyOTRjYWFhY2FhMjAwMTU1MmExOWMiLCJpYXQiOjE2MzU5NDc3MjIsImV4cCI6MTYzNzE1NzMyMn0.iADXUoghFqm1Ar9In_6vTvfSvSVRBnJUL0Qr7XOFva8",
-  },
-};
-
-fetch(`https://striveschool-api.herokuapp.com/api/product`, get)
-  .then((response) => response.json())
-  .then((products) => {
-    products.forEach((product) => {
-      let container = document.querySelector(".container");
-      container.innerHTML += `
-        <article class="card">
-        <div class="img-container">
-          <img
-            src="${product.imageUrl}"
-            alt=""
-          />
-        </div>
-        <div class="body">
-        <p>${product.name}</p>
-        <p>${product.description}</p>
-          <p>${product.brand}</p>
-          <p>${"£" + product.price}</p>
-        </div>
-      </article>`;
-    });
-  });
+//     });
+//   });
