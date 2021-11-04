@@ -55,18 +55,40 @@ let getObjects = async () => {
   }
 };
 
+getObjects();
+
 // view details
+
+let urlId = window.location.search;
+let params = new URLSearchParams(urlId);
+let id = params.get("id");
+console.log(id);
 
 let viewDetails = async () => {
   try {
     let response = await fetch(
-      `https://striveschool-api.herokuapp.com/api/product`,
+      `https://striveschool-api.herokuapp.com/api/product/${id}`,
       get
     );
 
     if (response.ok) {
       let body = await response.json();
       console.log(body);
+      let details = (document.querySelector(".details").innerHTML = `
+      <article class="card">
+      <div class="img-container">
+        <img
+          src="${body.imageUrl}"
+          alt=""
+        />
+      </div>
+      <div class="body">
+      <p>${body.name}</p>
+      <p>${body.description}</p>
+        <p>${body.brand}</p>
+        <p>${"£" + body.price}</p>
+      </div>
+    </article>`);
     } else {
       throw Error("Fetch didn't work");
     }
@@ -75,7 +97,7 @@ let viewDetails = async () => {
   }
 };
 
-getObjects();
+viewDetails();
 
 // POST
 
